@@ -27,21 +27,22 @@ package com.pao.laboratory02.exercise4.model;
  *   p.describe() → "Coco (varsta: 2 ani) face: Squawk! (știe 50 cuvinte)"
  *   p.toString() → "Parrot{name='Coco', age=2}"
  */
+
 public class Parrot extends Animal {
 
-    // TODO: adaugă atributul private int knownWords
+    private int knownWords;
 
     public Parrot(String name, int age, int knownWords) {
         super(name, age);
-        // TODO: asignează this.knownWords = knownWords
+        this.knownWords = knownWords;
     }
 
-    // TODO: adaugă getKnownWords()
+    public int getKnownWords() {
+        return knownWords;
+    }
 
     @Override
     public String sound() {
-        return ""; // TODO: returnează "Squawk! (știe X cuvinte)"
-        // Hint: return "Squawk! (știe " + knownWords + " cuvinte)";
+        return "Squawk! (știe " + knownWords + " cuvinte)";
     }
 }
-
