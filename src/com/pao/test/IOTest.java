@@ -5,7 +5,7 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import com.github.difflib.DiffUtils;
+import com.github.difflibnu.DiffUtils;
 import com.github.difflib.UnifiedDiffUtils;
 import com.github.difflib.patch.Patch;
 
