@@ -1,0 +1,51 @@
+package com.pao.laboratory07.exercise1;
+
+import com.pao.laboratory07.exercise1.exceptions.*;
+
+import java.util.Stack;
+
+public class Order {
+    private OrderState currentState;
+    private Stack<OrderState> history = new Stack<>();
+
+    public Order(OrderState initialState) {
+        this.currentState = initialState;
+        System.out.println(currentState);
+    }
+
+    public void nextState() throws OrderIsAlreadyFinalException {
+        if (currentState.isFinal()) {
+            throw new OrderIsAlreadyFinalException();
+        }
+
+        history.push(currentState);
+
+        switch (currentState) {
+            case PLACED -> currentState = OrderState.PROCESSED;
+            case PROCESSED -> currentState = OrderState.SHIPPED;
+            case SHIPPED -> currentState = OrderState.DELIVERED;
+        }
+
+        System.out.println(currentState);
+    }
+
+    public void cancel() throws CannotCancelFinalOrderException {
+        if (currentState.isFinal()) {
+            throw new CannotCancelFinalOrderException();
+        }
+
+        history.push(currentState);
+        currentState = OrderState.CANCELED;
+
+        System.out.println(currentState);
+    }
+
+    public void undoState() throws CannotRevertInitialOrderStateException {
+        if (history.isEmpty()) {
+            throw new CannotRevertInitialOrderStateException();
+        }
+
+        currentState = history.pop();
+        System.out.println(currentState);
+    }
+}
