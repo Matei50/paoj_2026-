@@ -4,8 +4,8 @@ public final class ComandaStandard extends Comanda {
 
     private double pret;
 
-    public ComandaStandard(String nume, double pret) {
-        super(nume);
+    public ComandaStandard(String nume, double pret, String client) {
+        super(nume, client);
         this.pret = pret;
     }
 
@@ -16,7 +16,7 @@ public final class ComandaStandard extends Comanda {
 
     @Override
     public String descriere() {
-        return String.format("STANDARD: %s, pret: %.2f lei [%s]",
-                nume, pretFinal(), stare);
+        return String.format("STANDARD: %s, pret: %.2f lei [%s] - client: %s",
+                nume, pretFinal(), stare, client);
     }
 }

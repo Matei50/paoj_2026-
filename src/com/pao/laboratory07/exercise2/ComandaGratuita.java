@@ -13,6 +13,6 @@ public final class ComandaGratuita extends Comanda {
 
     @Override
     public String descriere() {
-        return String.format("GIFT: %s, gratuit [%s]", nume, stare);
+        return String.format("GIFT: %s, gratuit [%s] - client: %s", nume, stare, client);
     }
 }

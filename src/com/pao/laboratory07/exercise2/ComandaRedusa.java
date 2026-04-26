@@ -22,7 +22,7 @@ public final class ComandaRedusa extends Comanda {
 
     @Override
     public String descriere() {
-        return String.format("DISCOUNTED: %s, pret: %.2f lei (-%d%%) [%s]",
-                nume, pretFinal(), discount, stare);
+        return String.format("DISCOUNTED: %s, pret: %.2f lei (-%d%%) [%s] - client: %s",
+                nume, pretFinal(), discount, stare, client);
     }
 }

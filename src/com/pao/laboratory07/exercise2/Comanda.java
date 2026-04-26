@@ -5,11 +5,18 @@ import com.pao.laboratory07.exercise1.OrderState;
 public abstract sealed class Comanda
         permits ComandaStandard, ComandaRedusa, ComandaGratuita {
 
+    protected String client;
     protected String nume;
     protected OrderState stare;
 
     public Comanda(String nume) {
         this.nume = nume;
+        this.stare = OrderState.PLACED;
+    }
+
+    public Comanda(String nume, String client) {
+        this.nume = nume;
+        this.client = client;
         this.stare = OrderState.PLACED;
     }
 
