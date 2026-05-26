@@ -27,8 +27,8 @@ Markdown și Java relevante, și verifică fiecare regulă din lista de mai jos.
 - Fiecare subdirector `exerciseN/` din laborator **trebuie** să conțină un fișier `Readme.md`.
 - `[FAIL]` dacă lipsește.
 
-### R-STR-2: Fiecare exercițiu are un `Main.java`
-- Fiecare subdirector `exerciseN/` trebuie să conțină `Main.java`.
+### R-STR-2: Fiecare exercițiu are un `src.com.pao.project.fooddeliveryplatform.Main.java`
+- Fiecare subdirector `exerciseN/` trebuie să conțină `src.com.pao.project.fooddeliveryplatform.Main.java`.
 - `[FAIL]` dacă lipsește.
 
 ### R-STR-3: Exercițiile cu teste automate au `Test.java` și directorul `tests/`
@@ -133,7 +133,7 @@ Pentru fiecare laboratoryNN/:
 
   Pentru fiecare exerciseM/:
     □ exerciseM/Readme.md există                                     [R-STR-1]
-    □ exerciseM/Main.java există                                     [R-STR-2]
+    □ exerciseM/src.com.pao.project.fooddeliveryplatform.Main.java există                                     [R-STR-2]
     □ Readme are secțiune de scenariu/problemă                       [R-CON-1]
     □ Readme NU are blocuri Java > 8 linii                           [R-CON-2]
     □ Hints menționează concepte, nu cod                             [R-CON-3]

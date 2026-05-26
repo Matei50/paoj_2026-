@@ -1,3 +1,5 @@
+package com.pao.project.fooddeliveryplatform.model;
+
 import java.util.List;
 import java.util.ArrayList;
 

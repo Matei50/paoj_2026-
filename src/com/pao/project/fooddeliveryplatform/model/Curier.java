@@ -1,3 +1,5 @@
+package com.pao.project.fooddeliveryplatform.model;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -23,12 +25,19 @@ public class Curier extends Utilizator {
         return experienta;
     }
 
+
+
     public List<Comanda> getComenziLivrate() {
         return comenziLivrate;
     }
 
     public void adaugaComandaLivrata(Comanda comanda) {
-        getComenziLivrate.add(comanda);
+        comenziLivrate.add(comanda);
+    }
+
+    @Override
+    public String getRol() {
+        return "Curier";
     }
 
     @Override

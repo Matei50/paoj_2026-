@@ -19,7 +19,7 @@ fără a modifica clasele existente.
 ## Cerința generală
 
 Creează în pachetul `com.pao.laboratory06.exercise1` toate clasele necesare și
-implementează `Main.java` care citește datele, sortează și afișează rezultatul.
+implementează `src.com.pao.project.fooddeliveryplatform.Main.java` care citește datele, sortează și afișează rezultatul.
 
 **Nu există un singur mod corect de a structura clasele** — gândește-te la ce fiecare
 clasă trebuie să știe și să facă, și separă responsabilitățile.

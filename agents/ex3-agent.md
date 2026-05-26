@@ -7,7 +7,7 @@
 
 ## Structure
 - No fixed input/output or test files.
-- Demonstration is done in Main.java, with clear comments and output.
+- Demonstration is done in src.com.pao.project.fooddeliveryplatform.Main.java, with clear comments and output.
 - More open-ended, focusing on integration, edge cases, and advanced features.
 
 ## Writing Style
@@ -32,5 +32,5 @@
 
 ---
 
-> Use this agent for generating or validating bonus, advanced exercises that require integration, edge cases, and demonstration in Main.java.
+> Use this agent for generating or validating bonus, advanced exercises that require integration, edge cases, and demonstration in src.com.pao.project.fooddeliveryplatform.Main.java.
 

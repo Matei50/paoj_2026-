@@ -1,11 +1,11 @@
-# Agent Rules: Laboratory 06 — Exercise 2 (Main, Multi-Part, Expands Example)
+# Agent Rules: Laboratory 06 — Exercise 2 (src.com.pao.project.fooddeliveryplatform.Main, Multi-Part, Expands Example)
 
 ## Purpose
-- Main exercise of the laboratory, building on the concepts from exercise1.
+- src.com.pao.project.fooddeliveryplatform.Main exercise of the laboratory, building on the concepts from exercise1.
 - Introduces new features and complexity, split into multiple parts (partA, partB, partC).
 
 ## Structure
-- One Main.java file.
+- One src.com.pao.project.fooddeliveryplatform.Main.java file.
 - Multiple parts, each with its own requirement and increasing complexity.
 - Each part has its own input/output specification and example.
 - Classes and interfaces may be reused and extended from exercise1.
@@ -26,7 +26,7 @@
 
 ## Grading
 - Automatic, pass/fail per part, based on the provided test cases.
-- Main points for the laboratory are awarded here.
+- src.com.pao.project.fooddeliveryplatform.Main points for the laboratory are awarded here.
 - No bonus points, but full completion is required for maximum grade (except if bonus is used).
 
 ## Typical Requirements

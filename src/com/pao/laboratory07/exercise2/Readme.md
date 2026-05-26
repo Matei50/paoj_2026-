@@ -13,14 +13,20 @@ Vei modela tipuri de comenzi folosind **sealed classes** și vei reutiliza enum-
 
 ## Ierarhia sealed
 
-Creează o sealed class `Comanda` care permite exact trei subclase:
+Creează o sealed class `src.com.pao.project.fooddeliveryplatform.model.Comanda` care permite exact trei subclase:
 
 ```java
-public abstract sealed class Comanda permits ComandaStandard, ComandaRedusa, ComandaGratuita {
-    protected String nume;
-    // ...
-    public abstract double pretFinal();
-    public abstract String descriere();
+import com.pao.project.fooddeliveryplatform.model.Comanda;
+
+public abstract sealed class src.
+com.pao.project.fooddeliveryplatform.model.Comanda permits
+ComandaStandard,ComandaRedusa,
+
+ComandaGratuita {
+  protected String nume;
+  // ...
+  public abstract double pretFinal ();
+  public abstract String descriere ();
 }
 ```
 

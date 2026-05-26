@@ -22,11 +22,11 @@
 
 | # | Exercițiu | Timp | Ce creezi |
 |---|-----------|------|-----------|
-| 1 | HashMap + TreeMap | ~20 min | Totul în [collections/Main.java](src/com/pao/laboratory04/collections/Main.java) |
-| 2 | Enum-uri | ~20 min | `Priority.java` + [enums/Main.java](src/com/pao/laboratory04/enums/Main.java) |
-| 3 | Excepții custom | ~25 min | `InvalidAgeException.java`, `DuplicateEntryException.java` + [exceptions/Main.java](src/com/pao/laboratory04/exceptions/Main.java) |
-| 4 | Integrator: Studenți + Note | ~35 min | 6 clase de la zero + [exercise/Main.java](src/com/pao/laboratory04/exercise/Main.java) |
-| 5 | **Bonus:** Task Manager + Audit | ~45 min | ~8 clase de la zero + [bonus/Main.java](src/com/pao/laboratory04/bonus/Main.java) |
+| 1 | HashMap + TreeMap | ~20 min | Totul în [collections/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory04/collections/Main.java) |
+| 2 | Enum-uri | ~20 min | `Priority.java` + [enums/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory04/enums/Main.java) |
+| 3 | Excepții custom | ~25 min | `InvalidAgeException.java`, `DuplicateEntryException.java` + [exceptions/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory04/exceptions/Main.java) |
+| 4 | Integrator: Studenți + Note | ~35 min | 6 clase de la zero + [exercise/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory04/exercise/Main.java) |
+| 5 | **Bonus:** Task Manager + Audit | ~45 min | ~8 clase de la zero + [bonus/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory04/bonus/Main.java) |
 
 ---
 
@@ -34,7 +34,7 @@
 
 > 📖 **Exemplu:** Rulează mai întâi [collections/ExampleMap.java](src/com/pao/laboratory04/collections/ExampleMap.java) pentru a vedea cum funcționează Map-urile.
 
-Lucrează în [collections/Main.java](src/com/pao/laboratory04/collections/Main.java) — cerințele sunt în Javadoc.
+Lucrează în [collections/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory04/collections/Main.java) — cerințele sunt în Javadoc.
 
 **Concepte cheie:**
 - `HashMap<K, V>` — acces O(1), ordine nepredictibilă
@@ -75,7 +75,7 @@ Studenți la BD (actualizat): [Ana, Elena, George]
 
 > 📖 **Exemplu:** Rulează mai întâi [enums/ExampleEnum.java](src/com/pao/laboratory04/enums/ExampleEnum.java) pentru a vedea enum-uri simple și cu metode abstracte.
 
-Creează `Priority.java` în [enums/](src/com/pao/laboratory04/enums) apoi completează [enums/Main.java](src/com/pao/laboratory04/enums/Main.java).
+Creează `Priority.java` în [enums/](src/com/pao/laboratory04/enums) apoi completează [enums/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory04/enums/Main.java).
 
 **Reține:**
 - Enum = set fix de constante singleton
@@ -118,7 +118,7 @@ CRITICAL: name=CRITICAL, ordinal=3
 
 > 📖 **Exemplu:** Rulează mai întâi [exceptions/ExampleExceptions.java](src/com/pao/laboratory04/exceptions/ExampleExceptions.java) pentru a vedea try-catch, custom exceptions, multi-catch.
 
-Creează `InvalidAgeException.java` și `DuplicateEntryException.java` în [exceptions/](src/com/pao/laboratory04/exceptions), apoi completează [exceptions/Main.java](src/com/pao/laboratory04/exceptions/Main.java).
+Creează `InvalidAgeException.java` și `DuplicateEntryException.java` în [exceptions/](src/com/pao/laboratory04/exceptions), apoi completează [exceptions/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory04/exceptions/Main.java).
 
 <details>
 <summary><b>Ierarhia excepțiilor</b></summary>
@@ -178,7 +178,7 @@ Metoda process() a aruncat: Vârsta 999 nu este validă (0-150)
 
 ### Exercițiul 4 (Integrator) — Gestiune studenți + note
 
-Creează **6 clase de la zero** apoi completează TODO-urile din [exercise/Main.java](src/com/pao/laboratory04/exercise/Main.java). Specs complete în Javadoc.
+Creează **6 clase de la zero** apoi completează TODO-urile din [exercise/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory04/exercise/Main.java). Specs complete în Javadoc.
 
 | # | Clasă | Pachet | Tip |
 |---|-------|--------|-----|
@@ -284,7 +284,7 @@ for (Subject subject : Subject.values()) {
 
 ### Exercițiul 5 (Bonus) — Task Manager cu Audit Log
 
-Construiește un sistem complet **fără schelet de cod** — primești doar cerințele în [bonus/Main.java](src/com/pao/laboratory04/bonus/Main.java). Tu decizi structura claselor și organizarea pachetelor.
+Construiește un sistem complet **fără schelet de cod** — primești doar cerințele în [bonus/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory04/bonus/Main.java). Tu decizi structura claselor și organizarea pachetelor.
 
 **Ce trebuie creat (~8 clase):**
 

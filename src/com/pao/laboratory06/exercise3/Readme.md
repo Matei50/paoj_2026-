@@ -3,7 +3,7 @@
 > **EXERCIȚIU BONUS:** Acest exercițiu este opțional și permite obținerea unui bonus de 0.5% la nota finală de laborator, dacă participi la cel puțin 8 exerciții. Poți atinge nota maximă chiar dacă nu se rotunjește la 50% la calculul final. Exercițiul nu are testare automată, dar este recomandat pentru aprofundare și pentru a obține bonusul.
 
 > **Pachet:** `com.pao.laboratory06.exercise3`
-> **Timp estimat:** ~45 min · **Teste automate:** nu (demonstrație în `Main.java`)
+> **Timp estimat:** ~45 min · **Teste automate:** nu (demonstrație în `src.com.pao.project.fooddeliveryplatform.Main.java`)
 
 ---
 
@@ -47,7 +47,7 @@ Modelezi o platformă de plăți online pentru o bancă, cu suport pentru mai mu
 - Pentru `trimiteSMS`, dacă este apelată pe o entitate fără capabilitate SMS, aruncă `UnsupportedOperationException`.
 - Pentru `autentificare`, dacă user sau parola sunt null/gol, aruncă `IllegalArgumentException`.
 
-### 4. Demonstrații obligatorii în Main.java
+### 4. Demonstrații obligatorii în src.com.pao.project.fooddeliveryplatform.Main.java
 - Creează și sortează un array de `Inginer` (natural și cu comparatorul de salariu).
 - Demonstrează accesul la un `Inginer` doar prin referința de tip `PlataOnline` (nu ai acces la metodele specifice inginerului).
 - Demonstrează accesul la o `PersoanaJuridica` prin referința de tip `PlataOnlineSMS` și stocarea mesajelor trimise, inclusiv cazurile fără telefon sau cu mesaj invalid.
@@ -79,4 +79,4 @@ Modelezi o platformă de plăți online pentru o bancă, cu suport pentru mai mu
 
 ---
 
-> Nu este necesar un input/output fix. Demonstrează toate funcționalitățile cerute în `Main.java` cu exemple relevante și comentarii pentru fiecare caz, inclusiv edge cases.
+> Nu este necesar un input/output fix. Demonstrează toate funcționalitățile cerute în `src.com.pao.project.fooddeliveryplatform.Main.java` cu exemple relevante și comentarii pentru fiecare caz, inclusiv edge cases.

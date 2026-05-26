@@ -1,4 +1,6 @@
-public class Utilizator {
+package com.pao.project.fooddeliveryplatform.model;
+
+public abstract class Utilizator {
     private String nume, parola;
     private Adresa adresa;
 
@@ -31,6 +33,8 @@ public class Utilizator {
     public void setAdresa(Adresa a){
         this.adresa = a;
     }
+
+    public abstract String getRol();
 
     @Override
     public String toString() {

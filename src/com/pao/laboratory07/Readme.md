@@ -60,10 +60,10 @@ Directorul de lucru trebuie să fie **rădăcina proiectului** (`paoj-2026/`):
 | Fișier                                     | Rol                           |
 |--------------------------------------------|-------------------------------|
 | [exercise1/Readme.md](exercise1/Readme.md) | Cerința completă Ex 1         |
-| [exercise1/Main.java](exercise1/Main.java) | Punct de intrare Ex 1         |
+| [exercise1/src.com.pao.project.fooddeliveryplatform.Main.java](exercise1/Main.java) | Punct de intrare Ex 1         |
 | [exercise1/Test.java](exercise1/Test.java) | Runner teste automate Ex 1    |
 | [exercise2/Readme.md](exercise2/Readme.md) | Cerința completă Ex 2         |
-| [exercise2/Main.java](exercise2/Main.java) | Punct de intrare Ex 2         |
+| [exercise2/src.com.pao.project.fooddeliveryplatform.Main.java](exercise2/Main.java) | Punct de intrare Ex 2         |
 | [exercise2/Checker.java](exercise2/Checker.java) | Runner teste automate Ex 2    |
 | [exercise3/Readme.md](exercise3/Readme.md) | Cerința completă Ex 3         |
-| [exercise3/Main.java](exercise3/Main.java) | Punct de intrare Ex 3         |
+| [exercise3/src.com.pao.project.fooddeliveryplatform.Main.java](exercise3/Main.java) | Punct de intrare Ex 3         |

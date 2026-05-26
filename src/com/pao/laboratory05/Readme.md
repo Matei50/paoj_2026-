@@ -16,7 +16,7 @@
 6. **Singleton + array resize** — recapitulare pattern-ul din Lab 01
 
 > 🎯 **De data aceasta scrii TOATE fișierele `.java` de la zero.**
-> `Main.java` din fiecare pachet este doar punctul de pornire — înlocuiește
+> `src.com.pao.project.fooddeliveryplatform.Main.java` din fiecare pachet este doar punctul de pornire — înlocuiește
 > `System.out.println(...)` cu codul real după ce ai creat clasele necesare.
 
 </details>
@@ -28,10 +28,10 @@
 | Fișier | Rol |
 |--------|-----|
 | [playlist/Readme.md](playlist/Readme.md) | Java Records quick reference — citește înainte de Exercise 1 |
-| [playlist/Main.java](playlist/Main.java) | Exercise 1 — punct de intrare, creezi restul |
-| [biblioteca/Main.java](biblioteca/Main.java) | Exercise 2 — punct de intrare, creezi restul |
-| [angajati/Main.java](angajati/Main.java) | Exercise 3 — punct de intrare, creezi restul |
-| [audit/Main.java](audit/Main.java) | Exercise 4 Bonus — punct de intrare, creezi restul |
+| [playlist/src.com.pao.project.fooddeliveryplatform.Main.java](playlist/Main.java) | Exercise 1 — punct de intrare, creezi restul |
+| [biblioteca/src.com.pao.project.fooddeliveryplatform.Main.java](biblioteca/Main.java) | Exercise 2 — punct de intrare, creezi restul |
+| [angajati/src.com.pao.project.fooddeliveryplatform.Main.java](angajati/Main.java) | Exercise 3 — punct de intrare, creezi restul |
+| [audit/src.com.pao.project.fooddeliveryplatform.Main.java](audit/Main.java) | Exercise 4 Bonus — punct de intrare, creezi restul |
 
 ---
 
@@ -90,7 +90,7 @@ Metode:
 > ⚠️ Clonează întotdeauna înainte de sort (`Song[] copy = songs.clone()`)
 > ca să nu modifici ordinea originală din playlist.
 
-#### `Main.java` — completează cu:
+#### `src.com.pao.project.fooddeliveryplatform.Main.java` — completează cu:
 ```java
 Playlist playlist = new Playlist("Road Trip");
 playlist.addSong(new Song("Waterloo", "ABBA", 174));
@@ -163,7 +163,7 @@ Sortare după `autor` alfabetic.
 - `void listSortedByRating()` — clonează, `Arrays.sort(copy)` (natural = `Comparable`), afișează
 - `void listSortedBy(Comparator<Carte> comparator)` — clonează, `Arrays.sort(copy, comparator)`, afișează
 
-#### `Main.java` — completează cu:
+#### `src.com.pao.project.fooddeliveryplatform.Main.java` — completează cu:
 ```java
 BibliotecaService biblioteca = BibliotecaService.getInstance();
 biblioteca.addCarte(new Carte("Ion", "Liviu Rebreanu", 1920, 4.5));
@@ -248,7 +248,7 @@ Câmpuri private: `String nume`, `Departament departament`, `double salariu`
   al căror `angajat.getDepartament().nume().equalsIgnoreCase(numeDept)`; dacă nu găsește
   niciun angajat, afișează `"Niciun angajat în departamentul: <numeDept>"`
 
-#### `Main.java` — meniu interactiv cu `Scanner`
+#### `src.com.pao.project.fooddeliveryplatform.Main.java` — meniu interactiv cu `Scanner`
 
 ```java
 while (true) {
@@ -348,7 +348,7 @@ Același ca la Ex3, plus:
 - `findByDepartament` → apelează `logAction("FIND_BY_DEPT", numeDept)` la început
 - `void printAuditLog()` — parcurge și afișează toate intrările
 
-#### `Main.java` — meniu extins față de Ex3, cu opțiunea extra:
+#### `src.com.pao.project.fooddeliveryplatform.Main.java` — meniu extins față de Ex3, cu opțiunea extra:
 ```
 4. Afișează audit log
 ```
@@ -610,7 +610,7 @@ adică la primul `getInstance()`. E garantat thread-safe de specificația JVM.
 | `Comparable` pe model | sortare naturală în serviciu |
 | `Comparator` extern | sortări alternative la cerere |
 | Singleton + array resize | servicii de gestiune obiecte |
-| Meniu interactiv | interfața utilizator (Main) |
+| Meniu interactiv | interfața utilizator (src.com.pao.project.fooddeliveryplatform.Main) |
 | Audit log cu `record` | **Etapa II** — serviciu de audit CSV |
 
 </details>

@@ -1,3 +1,5 @@
+package com.pao.project.fooddeliveryplatform.model;
+
 public class Review {
     private String mesaj;
     private int rating;

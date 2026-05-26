@@ -59,9 +59,9 @@ Steps needed to run the tests:
     ```json
     {
         "type": "java",
-        "name": "Launch Main",
+        "name": "Launch src.com.pao.project.fooddeliveryplatform.Main",
         "request": "launch",
-        "mainClass": "com.pao.laboratory04.Main",
+        "mainClass": "com.pao.laboratory04.src.com.pao.project.fooddeliveryplatform.Main",
         "classpath": [
             "src/com/pao/test/utils/java-diff-utils-4.15.jar"
         ]
@@ -327,8 +327,8 @@ java NumeleFisierului         # fără extensia .class
 
 ```bash
 cd src
-javac com/pao/laboratory01/Main.java
-java com.pao.laboratory01.Main
+javac com/pao/laboratory01/src.com.pao.project.fooddeliveryplatform.Main.java
+java com.pao.laboratory01.src.com.pao.project.fooddeliveryplatform.Main
 ```
 
 > Compilarea folosește `/` (sau `\` pe Windows), rularea folosește `.` (puncte).
@@ -338,8 +338,8 @@ java com.pao.laboratory01.Main
 | Acțiune                           | Comandă                         |
 |-----------------------------------|---------------------------------|
 | Verificare Java                   | `java -version`                 |
-| Compilare (fără pachet)           | `javac Main.java`               |
-| Rulare (fără pachet)              | `java Main`                     |
-| Compilare (cu pachet, din `src/`) | `javac com/pao/lab01/Main.java` |
-| Rulare (cu pachet, din `src/`)    | `java com.pao.lab01.Main`       |
+| Compilare (fără pachet)           | `javac src.com.pao.project.fooddeliveryplatform.Main.java`               |
+| Rulare (fără pachet)              | `java src.com.pao.project.fooddeliveryplatform.Main`                     |
+| Compilare (cu pachet, din `src/`) | `javac com/pao/lab01/src.com.pao.project.fooddeliveryplatform.Main.java` |
+| Rulare (cu pachet, din `src/`)    | `java com.pao.lab01.src.com.pao.project.fooddeliveryplatform.Main`       |
 

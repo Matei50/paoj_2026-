@@ -1,7 +1,12 @@
+package com.pao.project.fooddeliveryplatform.model;
+
+import com.pao.project.fooddeliveryplatform.exception.RestaurantNegasitException;
+
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class Restaurant {
+public class Restaurant implements Comparable<Restaurant>{
     private String nume, program;
     private CategorieRestaurant categorie;
     private List<Produs> listaProduse;
@@ -45,8 +50,41 @@ public class Restaurant {
         }
     }
 
+    public Restaurant() {
+        super();
+    }
+
+//    public Restaurant cautaRestaurant(String nume){
+//        for (Restaurant r : restaurante) {
+//            if(r.getNume().equalsIgnoreCase(nume)){
+//                return r;
+//            }
+//        }
+//        throw new RestaurantNegasitException("nu exista");
+//    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Restaurant)) return false;
+        Restaurant that = (Restaurant) o;
+        return Objects.equals(nume, that.nume);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nume);
+    }
+
     @Override
     public String toString() {
         return nume + " (" + categorie + "), program: " + program + ", rating: " + rating;
     }
+
+    @Override
+    public int compareTo(Restaurant o){
+        return this.nume.compareTo(o.nume);
+    }
+
 }
+

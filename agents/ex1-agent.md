@@ -1,11 +1,11 @@
-# Agent Rules: Laboratory 06 — Exercise 1 (Simple Example, Single Main)
+# Agent Rules: Laboratory 06 — Exercise 1 (Simple Example, Single src.com.pao.project.fooddeliveryplatform.Main)
 
 ## Purpose
 - Entry-level exercise for familiarization with the laboratory format and automatic testing.
-- Designed to be approachable, with clear requirements and a single Main.java.
+- Designed to be approachable, with clear requirements and a single src.com.pao.project.fooddeliveryplatform.Main.java.
 
 ## Structure
-- One Main.java file.
+- One src.com.pao.project.fooddeliveryplatform.Main.java file.
 - One or more simple classes (e.g., Angajat).
 - Input and output are explicitly specified in the Readme.
 - No sub-parts; the whole exercise is solved in a single flow.
@@ -32,5 +32,5 @@
 
 ---
 
-> Use this agent for generating or validating simple, example-style exercises with a single Main and explicit I/O.
+> Use this agent for generating or validating simple, example-style exercises with a single src.com.pao.project.fooddeliveryplatform.Main and explicit I/O.
 

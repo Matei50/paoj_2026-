@@ -24,11 +24,11 @@ Un sistem de gestionare mașini cu meniu interactiv — **model similar cu ce ve
 Înainte de a rezolva, studiază aceste exemple:
 - [arrays/ArrayDemo.java](arrays/ArrayDemo.java) — parcurgere, redimensionare dinamică, sortare (pattern-ul de care ai nevoie)
 - [exercise/CarService.java](exercise/CarService.java) — **Singleton Pattern** (o singură instanță, constructor `private`, acces prin `getInstance()`)
-- [exercise/Main.java](exercise/Main.java) — aplicație din linia de comandă cu `Scanner` + `while(true)` + `switch`
+- [exercise/src.com.pao.project.fooddeliveryplatform.Main.java](exercise/Main.java) — aplicație din linia de comandă cu `Scanner` + `while(true)` + `switch`
 
 **Ce trebuie să faci:**
 1. ✏️ Completează metoda `addReview` din [exercise/CarService.java](exercise/CarService.java) — pattern-ul de redimensionare este identic cu `addCar`.
-2. ✏️ Completează cazul 3 din switch-ul din [exercise/Main.java](exercise/Main.java) — citește date de la tastatură și apelează `addReview`.
+2. ✏️ Completează cazul 3 din switch-ul din [exercise/src.com.pao.project.fooddeliveryplatform.Main.java](exercise/Main.java) — citește date de la tastatură și apelează `addReview`.
 
 > **De ce contează?** Structura Singleton + meniu interactiv + operații CRUD este exact ce veți folosi în proiectul vostru individual.
 
@@ -38,7 +38,7 @@ Un sistem de gestionare mașini cu meniu interactiv — **model similar cu ce ve
 
 | Fișier | Rol |
 |--------|-----|
-| [Main.java](Main.java) | **Demo** — instanțiere obiecte, import din model/ |
+| [src.com.pao.project.fooddeliveryplatform.Main.java](Main.java) | **Demo** — instanțiere obiecte, import din model/ |
 | [model/Dog.java](model/Dog.java) | **Demo** — clasă cu încapsulare (private, getteri, setteri, toString) |
 | [model/Cat.java](model/Cat.java) | **Demo** — structură identică cu Dog |
 | [arrays/ArrayDemo.java](arrays/ArrayDemo.java) | **Demo** — parcurgere, redimensionare, sortare array-uri |
@@ -48,13 +48,13 @@ Un sistem de gestionare mașini cu meniu interactiv — **model similar cu ce ve
 | [comparators/Podcast.java](comparators/Podcast.java) | **Exercițiu 1** — de implementat |
 | [exercise/Car.java](exercise/Car.java) | **Exercițiu 2** — model (dat, citește-l) |
 | [exercise/CarService.java](exercise/CarService.java) | **Exercițiu 2** — Singleton cu TODO |
-| [exercise/Main.java](exercise/Main.java) | **Exercițiu 2** — meniu interactiv cu TODO |
+| [exercise/src.com.pao.project.fooddeliveryplatform.Main.java](exercise/Main.java) | **Exercițiu 2** — meniu interactiv cu TODO |
 
 ---
 
 ## Cum rulez?
 - **Demo-uri** — deschide orice fișier cu `main` → click dreapta → **Run**
-- **Exercițiul 2** — deschide `exercise/Main.java` → **Run** → interacționează cu meniul din consolă
+- **Exercițiul 2** — deschide `exercise/src.com.pao.project.fooddeliveryplatform.Main.java` → **Run** → interacționează cu meniul din consolă
 
 ---
 

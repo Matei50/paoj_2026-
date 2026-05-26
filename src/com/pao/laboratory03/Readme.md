@@ -29,7 +29,7 @@ Implementează `Circle` și `Rectangle` care extind `Shape`.
 
 **Fișiere:** [Circle.java](src/com/pao/laboratory03/exercise1/Circle.java), [Rectangle.java](src/com/pao/laboratory03/exercise1/Rectangle.java)  
 **Model:** [Shape.java](src/com/pao/laboratory03/exercise1/Shape.java) (dat)  
-**Test:** [Main.java](src/com/pao/laboratory03/exercise1/Main.java) (nu modifica)
+**Test:** [src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/exercise1/Main.java) (nu modifica)
 
 <details>
 <summary><b>Output așteptat</b></summary>
@@ -61,7 +61,7 @@ Adaugă `equals(Object o)` și `hashCode()` în `Student` — doi studenți sunt
 
 **Fișier:** [Student.java](src/com/pao/laboratory03/exercise2/Student.java)  
 **Model:** [Book.java](src/com/pao/laboratory03/equalshashcode/Book.java) (dat)  
-**Test:** [Main.java](src/com/pao/laboratory03/exercise2/Main.java) (nu modifica)
+**Test:** [src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/exercise2/Main.java) (nu modifica)
 
 <details>
 <summary><b>Output așteptat</b></summary>
@@ -83,7 +83,7 @@ Implementează `Programator` și `Manager` (extind `Angajat`) + completează `An
 
 **Fișiere:** [Programator.java](src/com/pao/laboratory03/exercise3/model/Programator.java), [Manager.java](src/com/pao/laboratory03/exercise3/model/Manager.java), [AngajatService.java](src/com/pao/laboratory03/exercise3/service/AngajatService.java)  
 **Model:** [Angajat.java](src/com/pao/laboratory03/exercise3/model/Angajat.java) (dat)  
-**Test:** [Main.java](src/com/pao/laboratory03/exercise3/Main.java) (nu modifica)
+**Test:** [src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/exercise3/Main.java) (nu modifica)
 
 **Formule:**
 - `Programator.salariuTotal()` = `getSalariuBaza() * 1.5`
@@ -124,7 +124,7 @@ Implementează `Dog`, `Cat`, `Parrot` (extind `Animal`) + completează `ZooServi
 
 **Fișiere:** [Dog.java](src/com/pao/laboratory03/exercise4/model/Dog.java), [Cat.java](src/com/pao/laboratory03/exercise4/model/Cat.java), [Parrot.java](src/com/pao/laboratory03/exercise4/model/Parrot.java), [ZooService.java](src/com/pao/laboratory03/exercise4/service/ZooService.java)  
 **Model:** [Animal.java](src/com/pao/laboratory03/exercise4/model/Animal.java), [Describable.java](src/com/pao/laboratory03/exercise4/model/Describable.java) (date)  
-**Test:** [Main.java](src/com/pao/laboratory03/exercise4/Main.java) — meniu interactiv (nu modifica)
+**Test:** [src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/exercise4/Main.java) — meniu interactiv (nu modifica)
 
 <details>
 <summary><b>Exemplu interacțiune</b></summary>
@@ -282,7 +282,7 @@ public int hashCode() {
 
 **Regulă de aur:** Folosește **aceleași câmpuri** în ambele metode. IntelliJ poate genera automat (`Alt+Insert` → `equals() and hashCode()`).
 
-Vezi demo în [equalshashcode/Main.java](src/com/pao/laboratory03/equalshashcode/Main.java) — ce se întâmplă cu `HashSet` când override-ul lipsește.
+Vezi demo în [equalshashcode/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/equalshashcode/Main.java) — ce se întâmplă cu `HashSet` când override-ul lipsește.
 
 </details>
 
@@ -294,7 +294,7 @@ Vezi demo în [equalshashcode/Main.java](src/com/pao/laboratory03/equalshashcode
 | `==` | **Referințe în memorie** | `book1 == book2` → `true` doar dacă sunt **exact același obiect** |
 | `.equals()` | **Conținut logic** | `book1.equals(book2)` → `true` dacă au **aceleași valori** (după criteriul din `equals()`) |
 
-**Demo din [equalshashcode/Main.java](src/com/pao/laboratory03/equalshashcode/Main.java):**
+**Demo din [equalshashcode/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/equalshashcode/Main.java):**
 ```java
 Book book1 = new Book("Java", 500);
 Book book2 = new Book("Java", 300);
@@ -357,7 +357,7 @@ public final class ImmutableDog {
 | **HashSet** | • Ordine imprevizibilă<br>• **Fără duplicate**<br>• Necesită `equals`/`hashCode`<br>• Performanță: O(1) add/contains | Verificare rapidă apartenență, eliminare duplicate |
 | **TreeSet** | • **Sortat automat** (alfabetic, numeric)<br>• Fără duplicate<br>• Necesită `Comparable` sau `Comparator`<br>• Performanță: O(log n) | Când ai nevoie de colecție sortată automat |
 
-**Demo:** Vezi [collections/Main.java](src/com/pao/laboratory03/collections/Main.java) pentru exemple practice.
+**Demo:** Vezi [collections/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/collections/Main.java) pentru exemple practice.
 
 **Alegere rapidă:**
 - Trebuie să păstrezi **ordine**? → `ArrayList`
@@ -371,7 +371,7 @@ public final class ImmutableDog {
 
 **Polimorfism** = o variabilă de tip **părinte** poate stoca un obiect de tip **copil**, iar la rulare se apelează implementarea **reală** (a copilului), nu cea din părinte.
 
-**Exemplu din [abstractclasses/Main.java](src/com/pao/laboratory03/abstractclasses/Main.java):**
+**Exemplu din [abstractclasses/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/abstractclasses/Main.java):**
 ```java
 DBConnection conn1 = new MySqlConnection("jdbc:mysql://...");  // upcasting
 DBConnection conn2 = new OracleConnection("jdbc:oracle://...");
@@ -391,7 +391,7 @@ for (DBConnection conn : connections) {
 - ✅ **Extensibilitate** — adaugi noi subclase fără a modifica codul existent
 - ✅ **Design patterns** — Strategy, Factory, Template Method se bazează pe polimorfism
 
-Vezi și [exercise1/Main.java](src/com/pao/laboratory03/exercise1/Main.java) — calculează suma ariilor pentru orice `Shape[]` fără să știe tipul exact (Circle/Rectangle).
+Vezi și [exercise1/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/exercise1/Main.java) — calculează suma ariilor pentru orice `Shape[]` fără să știe tipul exact (Circle/Rectangle).
 
 </details>
 
@@ -474,7 +474,7 @@ for (int i = 0; i < 1000; i++) {
 String result = sb.toString();
 ```
 
-Vezi benchmark în [strings/Main.java](src/com/pao/laboratory03/strings/Main.java) — diferența poate fi de **100x** viteza pentru concatenări masive!
+Vezi benchmark în [strings/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/strings/Main.java) — diferența poate fi de **100x** viteza pentru concatenări masive!
 
 **Regulă:** Concatenări în **buclă** sau **multe operații** → `StringBuilder`. Concatenare simplă (2-3 stringuri) → `+` este OK.
 
@@ -534,14 +534,14 @@ if (shape instanceof Circle) {
 }
 ```
 
-**Exemplu din laborator:** [abstractclasses/Main.java](src/com/pao/laboratory03/abstractclasses/Main.java) — array `DBConnection[]` conține obiecte `MySqlConnection` și `OracleConnection` (upcasting).
+**Exemplu din laborator:** [abstractclasses/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/abstractclasses/Main.java) — array `DBConnection[]` conține obiecte `MySqlConnection` și `OracleConnection` (upcasting).
 
 </details>
 
 <details>
 <summary><b>14. Cum parcurg o colecție? Care este diferența între metodele de iterare?</b></summary>
 
-**4 metode de parcurgere** (vezi [collections/Main.java](src/com/pao/laboratory03/collections/Main.java)):
+**4 metode de parcurgere** (vezi [collections/src.com.pao.project.fooddeliveryplatform.Main.java](src/com/pao/laboratory03/collections/Main.java)):
 
 **a) For clasic** — doar pentru liste cu index (`ArrayList`, array-uri):
 ```java

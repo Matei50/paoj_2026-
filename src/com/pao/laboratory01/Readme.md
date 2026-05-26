@@ -17,7 +17,7 @@ public static void main(String[] args) {
 ### 2. Regula clasei `public`
 Într-un fișier `.java` **poate exista o singură clasă `public`**, iar **numele fișierului trebuie să coincidă cu numele clasei**.
 
-Exemplu: fișierul `Main.java` conține `public class Main`.
+Exemplu: fișierul `src.com.pao.project.fooddeliveryplatform.Main.java` conține `public class src.com.pao.project.fooddeliveryplatform.Main`.
 
 ### 3. Ce este un pachet (`package`)
 Pachetele organizează clasele în foldere logice, ca un sistem de directoare.
@@ -53,7 +53,7 @@ for (int num : array) { }         // enhanced for (fără index)
 
 | Fișier | Rol | Deschide |
 |--------|-----|----------|
-| [Main.java](Main.java) | **Demo** — exemplu rezolvat de profesor: citire array + afișare în 2 moduri | ⬅ Citește codul și comentariile |
+| [src.com.pao.project.fooddeliveryplatform.Main.java](Main.java) | **Demo** — exemplu rezolvat de profesor: citire array + afișare în 2 moduri | ⬅ Citește codul și comentariile |
 | [MediaAritmetica.java](MediaAritmetica.java) | **Exercițiul 1** — de rezolvat de student | ⬅ Scrie codul aici |
 | [DiagonaleleMatricei.java](DiagonaleleMatricei.java) | **Exercițiul 2** — de rezolvat de student | ⬅ Scrie codul aici |
 
@@ -67,7 +67,7 @@ for (int num : array) { }         // enhanced for (fără index)
 > 2. Afișați **media aritmetică** a elementelor șirului.
 
 **Indicii:**
-- Uită-te în `Main.java` la cum se citește un array — fă la fel.
+- Uită-te în `src.com.pao.project.fooddeliveryplatform.Main.java` la cum se citește un array — fă la fel.
 - Media aritmetică = suma elementelor / numărul de elemente.
 - Atenție: `int / int` dă rezultat `int` în Java. Folosește un cast: `(double) suma / n`.
 

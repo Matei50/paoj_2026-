@@ -7,7 +7,7 @@
 
 ## Scop
 
-Acest exercițiu te familiarizează cu structura laboratorului și testarea automată. Vei implementa un sistem simplu de urmărire a comenzilor pentru un magazin online, folosind un singur fișier `Main.java` și un enum pentru stări.
+Acest exercițiu te familiarizează cu structura laboratorului și testarea automată. Vei implementa un sistem simplu de urmărire a comenzilor pentru un magazin online, folosind un singur fișier `src.com.pao.project.fooddeliveryplatform.Main.java` și un enum pentru stări.
 
 ---
 
@@ -15,7 +15,7 @@ Acest exercițiu te familiarizează cu structura laboratorului și testarea auto
 
 Creează în pachetul `com.pao.laboratory07.exercise1`:
 - un enum `StareComanda` cu stările posibile ale unei comenzi;
-- un `Main.java` care citește comenzile de la tastatură, procesează tranzițiile și afișează rezultatele conform cerințelor.
+- un `src.com.pao.project.fooddeliveryplatform.Main.java` care citește comenzile de la tastatură, procesează tranzițiile și afișează rezultatele conform cerințelor.
 
 ---
 
@@ -61,10 +61,10 @@ QUIT             User quit the program.
 
 - Comandă suplimentară: `cancel`
 - Dacă primești `cancel` din orice stare non-finală, treci la `CANCELED`
-- Dacă ești într-o stare finală (`DELIVERED` sau `CANCELED`), orice comandă (`next`, `cancel`) afișează: `Comanda este in stare finala.`
+- Dacă ești într-o stare finală (`DELIVERED` sau `CANCELED`), orice comandă (`next`, `cancel`) afișează: `src.com.pao.project.fooddeliveryplatform.model.Comanda este in stare finala.`
 - Comenzile continuă să fie citite până la `QUIT`, dar sunt ignorate
 
-- TODO daca comanda este in stare finala, orice comanda (next, cancel) afiseaza: Comanda este in stare finala.
+- TODO daca comanda este in stare finala, orice comanda (next, cancel) afiseaza: src.com.pao.project.fooddeliveryplatform.model.Comanda este in stare finala.
   - Programul continua sa citeasca comenzi pana la QUIT, dar orice comanda este ignorata (afiseaza doar mesajul de stare finala)
 
 ### Indicatii programare:
@@ -74,8 +74,8 @@ QUIT             User quit the program.
 ```
 Input:           Output:
 DELIVERED          DELIVERED
-next             Comanda este in stare finala.
-cancel           Comanda este in stare finala.
+next             src.com.pao.project.fooddeliveryplatform.model.Comanda este in stare finala.
+cancel           src.com.pao.project.fooddeliveryplatform.model.Comanda este in stare finala.
 QUIT
 ```
 

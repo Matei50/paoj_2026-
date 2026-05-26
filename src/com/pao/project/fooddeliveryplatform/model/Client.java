@@ -1,3 +1,5 @@
+package com.pao.project.fooddeliveryplatform.model;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -33,6 +35,11 @@ public class Client extends Utilizator {
 
     public void adaugaComandaFavorita(Comanda comanda) {
         comenziFavorite.add(comanda);
+    }
+
+    @Override
+    public String getRol() {
+        return "Client";
     }
 
     @Override

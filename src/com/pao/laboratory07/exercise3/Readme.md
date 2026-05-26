@@ -1,22 +1,28 @@
 # Exercițiul 3 (BONUS) — Analiză cu Stream API pentru comenzi
 
 > **Pachet:** `com.pao.laboratory07.exercise3`
-> **Timp estimat:** ~30 min · **Teste automate:** nu (demonstrație în `Main.java`)
+> **Timp estimat:** ~30 min · **Teste automate:** nu (demonstrație în `src.com.pao.project.fooddeliveryplatform.Main.java`)
 
 ---
 
 ## Scop
 
-Extinde clasele `Comanda` din exercițiul 2 (adaugă câmpul `client`) și implementează operații de analiză și filtrare folosind **Stream API**.
+Extinde clasele `src.com.pao.project.fooddeliveryplatform.model.Comanda` din exercițiul 2 (adaugă câmpul `client`) și implementează operații de analiză și filtrare folosind **Stream API**.
 
 ---
 
 ## Extensia claselor din Exercițiul 2
 
-Refolosește ierarhia sealed din exercițiul 2. Adaugă câmpul `String client` la clasa `Comanda`:
+Refolosește ierarhia sealed din exercițiul 2. Adaugă câmpul `String client` la clasa `src.com.pao.project.fooddeliveryplatform.model.Comanda`:
 
 ```java
-public abstract sealed class Comanda permits ComandaStandard, ComandaRedusa, ComandaGratuita {
+import com.pao.project.fooddeliveryplatform.model.Comanda;
+
+public abstract sealed class src.
+com.pao.project.fooddeliveryplatform.model.Comanda permits
+ComandaStandard,ComandaRedusa,
+
+ComandaGratuita {
     protected String nume;
     protected String client;  // ← ADAUG ACEASTA
     // ...
@@ -114,6 +120,6 @@ Utilizează următoarele concepte Java:
 
 ## Testare
 
-Demonstrează în `Main.java` toate operațiile de mai sus. Output-ul trebuie să fie clar și ușor de urmărit.
+Demonstrează în `src.com.pao.project.fooddeliveryplatform.Main.java` toate operațiile de mai sus. Output-ul trebuie să fie clar și ușor de urmărit.
 
 Se acordă **0.4% bonus** la nota finală dacă exercițiul este complet și funcțional.

@@ -33,7 +33,7 @@ git push origin proiect-etapa2
 ## Condiții generale de punctare
 
 - ✅ Proiectul **compilează** fără erori
-- ✅ Toate cerințele etapei sunt implementate și demonstrabile din `Main`
+- ✅ Toate cerințele etapei sunt implementate și demonstrabile din `src.com.pao.project.fooddeliveryplatform.Main`
 - ✅ Codul este organizat în pachete (`com.pao.proiect.<tema_ta>`)
 - ✅ Branch-ul este push-uit pe GitHub înainte de deadline
 
@@ -120,7 +120,7 @@ Exemple (pentru tema *Bibliotecă*):
   _(ex: `CarteService`, `CititorService` — fiecare gestionează operații pentru un tip de obiect)_
 - [ ] Fiecare serviciu implementat ca **Singleton** (constructor privat + metodă statică `getInstance()`)
 - [ ] Serviciile expun cel puțin operațiile: **adaugă, șterge, caută după id/nume, listează toate**
-- [ ] O clasă **`Main`** care apelează **toate cele 10 acțiuni** definite la punctul 1,
+- [ ] O clasă **`src.com.pao.project.fooddeliveryplatform.Main`** care apelează **toate cele 10 acțiuni** definite la punctul 1,
   demonstrând funcționarea completă a sistemului
 
 #### 2.4 — Organizare și calitate
@@ -131,7 +131,7 @@ Exemple (pentru tema *Bibliotecă*):
   ├── model/        ← clasele de domeniu
   ├── service/      ← serviciile singleton
   ├── exception/    ← excepțiile custom
-  └── Main.java
+  └── src.com.pao.project.fooddeliveryplatform.Main.java
   ```
 - [ ] Fără cod duplicat — logica comună extrasă în metode sau clase de bază
 - [ ] Fără `NullPointerException` la rulare — validează inputurile în servicii
@@ -241,7 +241,7 @@ Exemple (pentru tema *Bibliotecă*):
 ```
 src/
 └── com/pao/proiect/<tema_ta>/
-    ├── Main.java
+    ├── src.com.pao.project.fooddeliveryplatform.Main.java
     ├── model/
     │   ├── Carte.java
     │   ├── Cititor.java
@@ -279,7 +279,7 @@ README.md                                ← definirea sistemului (Etapa I, punc
 | Clasă imutabilă + ≥2 excepții custom                             | 1p      |
 | ≥2 colecții diferite (una sortată) + ≥1 Map                      | 2p      |
 | ≥2 servicii Singleton cu operații CRUD în memorie                | 2p      |
-| `Main` demonstrativ care apelează toate cele 10 acțiuni          | 1p      |
+| `src.com.pao.project.fooddeliveryplatform.Main` demonstrativ care apelează toate cele 10 acțiuni          | 1p      |
 | Organizare în pachete, fără duplicat, fără NPE                   | 1p      |
 | **Total Etapa I**                                                | **12p** |
 
