@@ -1,6 +1,7 @@
 package com.pao.project.fooddeliveryplatform.model;
 
 public abstract class Utilizator {
+    private int id;
     private String nume, parola;
     private Adresa adresa;
 
@@ -8,6 +9,14 @@ public abstract class Utilizator {
         this.nume = n;
         this.parola = p;
         this.adresa = a;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNume(){

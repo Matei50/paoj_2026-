@@ -3,6 +3,7 @@ import com.pao.project.fooddeliveryplatform.exception.RestaurantNegasitException
 import com.pao.project.fooddeliveryplatform.model.Restaurant;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -43,6 +44,7 @@ public class RestaurantService {
     }
 
     public void afiseazaRestaurante() {
+        Collections.sort(restaurante); // Sortează conform Comparable din clasa Restaurant
         for(Restaurant r : restaurante)
             System.out.println(r);
     }

@@ -2,24 +2,41 @@ package com.pao.project.fooddeliveryplatform;
 
 import com.pao.project.fooddeliveryplatform.exception.*;
 import com.pao.project.fooddeliveryplatform.model.*;
+import com.pao.project.fooddeliveryplatform.repository.*;
 import com.pao.project.fooddeliveryplatform.service.*;
+import com.pao.project.fooddeliveryplatform.util.DatabaseConnection;
 
+import java.sql.Connection;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        AuditService auditService = AuditService.getInstance();
+        ReportService reportService = ReportService.getInstance();
 
-        RestaurantService restaurantService = RestaurantService.getInstance();
-        ClientService clientService = ClientService.getInstance();
+        // Initializam Repositories
+        ClientRepository clientRepository = new ClientRepository();
+        RestaurantRepository restaurantRepository = new RestaurantRepository();
+        ProdusRepository produsRepository = new ProdusRepository();
+        ComandaRepository comandaRepository = new ComandaRepository();
 
+        // Inseram date demo in baza de date
         Restaurant r1 = new Restaurant("KFC", "10-22", CategorieRestaurant.FAST_FOOD, 4.5);
-        Produs p1 = new Produs("Burger", "Mancare", 25);
-        Produs p2 = new Produs("Cola", "Bautura", 10);
-
-        r1.adaugaProdus(p1);
-        r1.adaugaProdus(p2);
-        restaurantService.adaugaRestaurant(r1);
+        if (restaurantRepository.findByNume("KFC").isEmpty()) {
+            restaurantRepository.save(r1);
+            
+            Produs p1 = new Produs("Burger", "Mancare", 25);
+            p1.setIdRestaurant(r1.getId());
+            Produs p2 = new Produs("Cola", "Bautura", 10);
+            p2.setIdRestaurant(r1.getId());
+            
+            produsRepository.save(p1);
+            produsRepository.save(p2);
+        } else {
+            r1 = restaurantRepository.findByNume("KFC").get();
+        }
 
         Client client = null;
         Comanda comandaCurenta = null;
@@ -37,12 +54,12 @@ public class Main {
             System.out.println("5. Afisare meniu restaurant");
             System.out.println("6. Adaugare produs in cos");
             System.out.println("7. Afisare cos");
-            System.out.println("8. Plasare comanda");
+            System.out.println("8. Plasare comanda (TRANZACTIE)");
             System.out.println("9. Verificare status comanda");
-            System.out.println("10. Anulare comanda");
-            System.out.println("11. Adaugare restaurant la favorite");
-            System.out.println("12. Afisare restaurante favorite");
-            System.out.println("13. Calculare total comanda");
+            System.out.println("10. Raport: Detalii Comenzi (JOIN)");
+            System.out.println("11. Raport: Total comenzi per client (JOIN)");
+            System.out.println("12. Raport: Produse per restaurant (JOIN)");
+            System.out.println("13. Calculare total comanda curenta");
             System.out.println("0. Iesire");
             System.out.print("Alege optiunea: ");
 
@@ -51,6 +68,7 @@ public class Main {
 
             switch (optiune) {
                 case 1 -> {
+                    auditService.logAction("creare_cont_client");
                     System.out.print("Nume: ");
                     String nume = scanner.nextLine();
 
@@ -59,83 +77,93 @@ public class Main {
 
                     Adresa adresa = new Adresa("Bucuresti", "Unirii", 10);
                     client = new Client(nume, parola, adresa);
-                    clientService.adaugaClient(client);
-
-                    System.out.println("Cont creat cu succes.");
+                    
+                    if(clientRepository.findByNume(nume).isEmpty()) {
+                        clientRepository.save(client);
+                        System.out.println("Cont creat cu succes. ID: " + client.getId());
+                    } else {
+                        System.out.println("Numele exista deja in DB.");
+                    }
                 }
 
                 case 2 -> {
+                    auditService.logAction("autentificare_client");
                     System.out.print("Nume client: ");
                     String nume = scanner.nextLine();
 
-                    try {
-                        client = clientService.cautaClient(nume);
-                        System.out.println("Autentificare reusita: " + client.getNume());
-                    } catch (ClientNegasitException e) {
-                        System.out.println(e.getMessage());
+                    Optional<Client> gasit = clientRepository.findByNume(nume);
+                    if (gasit.isPresent()) {
+                        client = gasit.get();
+                        System.out.println("Autentificare reusita: " + client.getNume() + " (ID: " + client.getId() + ")");
+                    } else {
+                        System.out.println("Clientul nu a fost gasit in DB.");
                     }
                 }
 
                 case 3 -> {
-                    restaurantService.afiseazaRestaurante();
+                    auditService.logAction("afisare_restaurante");
+                    System.out.println("Restaurante in DB:");
+                    for (Restaurant r : restaurantRepository.findAll()) {
+                        System.out.println(r);
+                    }
                 }
 
                 case 4 -> {
+                    auditService.logAction("cautare_restaurant");
                     System.out.print("Nume restaurant: ");
                     String nume = scanner.nextLine();
 
-                    try {
-                        Restaurant gasit = restaurantService.cautaRestaurant(nume);
-                        System.out.println(gasit);
-                    } catch (RestaurantNegasitException e) {
-                        System.out.println(e.getMessage());
+                    Optional<Restaurant> gasit = restaurantRepository.findByNume(nume);
+                    if (gasit.isPresent()) {
+                        System.out.println(gasit.get());
+                    } else {
+                        System.out.println("Restaurantul nu a fost gasit in DB.");
                     }
                 }
 
                 case 5 -> {
+                    auditService.logAction("afisare_meniu_restaurant");
                     System.out.print("Nume restaurant: ");
                     String nume = scanner.nextLine();
 
-                    try {
-                        Restaurant gasit = restaurantService.cautaRestaurant(nume);
-                        gasit.afiseazaMeniu();
-                    } catch (RestaurantNegasitException e) {
-                        System.out.println(e.getMessage());
+                    Optional<Restaurant> gasit = restaurantRepository.findByNume(nume);
+                    if (gasit.isPresent()) {
+                        Restaurant r = gasit.get();
+                        System.out.println("Meniu " + r.getNume() + ":");
+                        for(Produs p : produsRepository.findByRestaurantId(r.getId())) {
+                            System.out.println(" - " + p.getNume() + " : " + p.getPret() + " lei");
+                        }
+                    } else {
+                        System.out.println("Restaurantul nu a fost gasit.");
                     }
                 }
 
                 case 6 -> {
+                    auditService.logAction("adaugare_produs_cos");
                     if (client == null) {
                         System.out.println("Trebuie sa creezi/autentifici un client.");
                         break;
                     }
 
-                    System.out.println("Produse disponibile:");
-                    r1.afiseazaMeniu();
-
-                    System.out.print("Alege produs: ");
+                    System.out.print("Introdu numele produsului dorit (ex: Burger): ");
                     String produsAles = scanner.nextLine();
-
-                    Produs produs = null;
-                    for (Produs p : r1.getListaProduse()) {
+                    
+                    boolean found = false;
+                    for (Produs p : produsRepository.findAll()) {
                         if (p.getNume().equalsIgnoreCase(produsAles)) {
-                            produs = p;
+                            client.getCos().adaugaProdus(p);
+                            System.out.println("Produs adaugat in cos: " + p.getNume());
+                            found = true;
+                            break;
                         }
                     }
-
-                    try {
-                        if (produs == null) {
-                            throw new ProdusIndisponibilException("Produsul nu exista.");
-                        }
-
-                        client.getCos().adaugaProdus(produs);
-                        System.out.println("Produs adaugat in cos.");
-                    } catch (ProdusIndisponibilException e) {
-                        System.out.println(e.getMessage());
+                    if(!found) {
+                        System.out.println("Produsul nu a fost gasit in baza de date.");
                     }
                 }
 
                 case 7 -> {
+                    auditService.logAction("afisare_cos");
                     if (client == null) {
                         System.out.println("Nu exista client autentificat.");
                     } else {
@@ -144,61 +172,56 @@ public class Main {
                 }
 
                 case 8 -> {
+                    auditService.logAction("plasare_comanda");
                     if (client == null) {
                         System.out.println("Nu exista client autentificat.");
                         break;
                     }
+                    if (client.getCos().getProduse().isEmpty()) {
+                        System.out.println("Cosul este gol.");
+                        break;
+                    }
 
-                    comandaCurenta = new Comanda(1, client);
-
+                    comandaCurenta = new Comanda(0, client);
                     for (Produs p : client.getCos().getProduse()) {
                         comandaCurenta.adaugaProdus(p);
                     }
 
-                    client.getComenziFavorite().add(comandaCurenta);
-                    System.out.println("Comanda plasata:");
-                    System.out.println(comandaCurenta);
+                    comandaRepository.save(comandaCurenta); // Aici ruleaza TRANZACTIA JDBC
+                    System.out.println("Comanda plasata si salvata in DB.");
+                    
+                    // Golim cosul dupa plasare
+                    client.getCos().getProduse().clear();
                 }
 
                 case 9 -> {
+                    auditService.logAction("verificare_status_comanda");
                     if (comandaCurenta == null) {
-                        System.out.println("Nu exista comanda.");
+                        System.out.println("Nu exista comanda curenta.");
                     } else {
                         System.out.println("Status comanda: " + comandaCurenta.getStatus());
                     }
                 }
 
                 case 10 -> {
-                    if (comandaCurenta == null) {
-                        System.out.println("Nu exista comanda.");
-                    } else {
-                        comandaCurenta.setStatus("Anulata");
-                        System.out.println("Comanda a fost anulata.");
-                    }
+                    auditService.logAction("raport_detalii_comenzi");
+                    reportService.afiseazaDetaliiComenzi();
                 }
 
                 case 11 -> {
-                    if (client == null) {
-                        System.out.println("Nu exista client autentificat.");
-                        break;
-                    }
-
-                    client.adaugaRestaurantFavorit(r1);
-                    System.out.println("Restaurant adaugat la favorite.");
+                    auditService.logAction("raport_comenzi_client");
+                    reportService.afiseazaTotalComenziPerClient();
                 }
 
                 case 12 -> {
-                    if (client == null) {
-                        System.out.println("Nu exista client autentificat.");
-                        break;
-                    }
-
-                    for (Restaurant r : client.getRestauranteFavorite()) {
-                        System.out.println(r);
-                    }
+                    auditService.logAction("raport_produse_restaurant");
+                    System.out.print("Pentru ce restaurant doresti raportul (ex: KFC): ");
+                    String num = scanner.nextLine();
+                    reportService.afiseazaProduseRestaurant(num);
                 }
 
                 case 13 -> {
+                    auditService.logAction("calculare_total_comanda");
                     if (comandaCurenta == null) {
                         System.out.println("Nu exista comanda.");
                     } else {
@@ -207,6 +230,7 @@ public class Main {
                 }
 
                 case 0 -> {
+                    auditService.logAction("iesire");
                     ruleaza = false;
                     System.out.println("La revedere!");
                 }

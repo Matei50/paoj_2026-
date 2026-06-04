@@ -2,6 +2,8 @@ package com.pao.project.fooddeliveryplatform.model;
 import java.util.Objects;
 
 public class Produs {
+    private int id;
+    private int idRestaurant;
     private String nume, categorie;
     private double pret;
 
@@ -10,6 +12,22 @@ public class Produs {
         this.nume= n;
         this.pret = p;
         this.categorie = c;
+    }
+
+    public int getIdRestaurant() {
+        return idRestaurant;
+    }
+
+    public void setIdRestaurant(int idRestaurant) {
+        this.idRestaurant = idRestaurant;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNume() {

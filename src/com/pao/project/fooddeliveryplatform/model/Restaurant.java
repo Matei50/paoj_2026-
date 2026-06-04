@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Restaurant implements Comparable<Restaurant>{
+    private int id;
     private String nume, program;
     private CategorieRestaurant categorie;
     private List<Produs> listaProduse;
@@ -18,6 +19,14 @@ public class Restaurant implements Comparable<Restaurant>{
         this.rating = rating;
         this.categorie = categorie;
         this.listaProduse = new ArrayList<>();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNume(){
